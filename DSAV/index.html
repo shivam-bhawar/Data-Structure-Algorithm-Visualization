@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Linear Search </title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link rel="stylesheet" href="CSS/Style.css">
+		<script src="JavaScript/Action.js"></script>
+		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+
+	</head>
+
+	<body>
+		<div id="heading">
+			<a href="index.html" style="text-decoration: none"> <h1 id="linear_serach_heading"> Linear Search </h1> </a>
+		</div>
+		<div id="info">
+			<h1 id="ls_heading"> Linear Search Algorithm: </h1>
+			<p id="def"> Linear Search, also called as 'Orderly Search' or 'Sequential Search', is a very simple Search Algorithm. In this type of Search, a Sequential Search is made over all items one by one. Every item is checked and if a match is found then that particular item is returned, otherwise the Search continues till the end of the Data Collection. </p>
+			<ul id="specs">
+			  <li>Worst Case Complexity: <b>O(n)</b></li>
+			  <li>Average Case Complexity: <b>O(n)</b></li>
+			  <li>Best Case Complexity: <b>O(1)</b></li>
+			</ul>
+		</div>
+		<div id="container">
+			<div id="visualization_container">
+			<h2 id="visualization_heading"> Linear Search Visualization </h2>
+				<button onclick="randomArray()" tabindex="2" id="random_button"> RANDOM ARRAY </button>
+				<button onclick="customInput()" tabindex="3" id="custom_button"> CUSTOM INPUT </button>
+				<br>
+				<span id="current_index"> Current Index =  </span> <input type="text" value="0" readonly="readonly" min="0" max="9" id="index"> 
+				<br>
+				<div class="flex_container">
+					<span id="index0" class="indices" style="margin-left: 3%;"> 0 </span>
+					<span id="index1" class="indices"> 1 </span>
+					<span id="index2" class="indices"> 2 </span>
+					<span id="index3" class="indices"> 3 </span>
+					<span id="index4" class="indices"> 4 </span>
+					<span id="index5" class="indices"> 5 </span>
+					<span id="index6" class="indices"> 6 </span>
+					<span id="index7" class="indices"> 7 </span>
+					<span id="index8" class="indices"> 8 </span>
+					<span id="index9" class="indices" style="margin-right: 3%;"> 9 </span>
+				</div>
+				<div class="flex_container">
+					<span id="0" class="elements" style="margin-left: 3%;"> &emsp; </span>
+					<span id="1" class="elements"> &emsp; </span>
+					<span id="2" class="elements"> &emsp; </span>
+					<span id="3" class="elements"> &emsp; </span>
+					<span id="4" class="elements"> &emsp; </span>
+					<span id="5" class="elements"> &emsp; </span>
+					<span id="6" class="elements"> &emsp; </span>
+					<span id="7" class="elements"> &emsp; </span>
+					<span id="8" class="elements"> &emsp; </span>
+					<span id="9" class="elements" style="margin-right: 3%;"> &emsp; </span>
+				</div>
+				<br>
+				<input type="text" id="key" maxlength="2" tabindex="100" onfocus="enterKey()"> 
+				<button onclick="acceptKey()" id="submit_button"> SUBMIT </button>
+				<br>
+				<b> <p id="result"> Result </p> </b>
+				<button onclick="prevStep()" id="prev_button"> &#8249; PREV</button>
+				<button onclick="nextStep()" id="next_button"> NEXT &#8250; </button>
+				<br>
+				<input type="text" maxlength="2" id="element_input">
+				<button onclick="acceptCustomElements()" id="sub_button"> SUBMIT </button>
+			</div>
+			
+			<div id="algorithm_container">
+				<h2 id="algorithm_heading"> Algorithm for Linear Search </h2>
+				<p class="steps" id="step1"> <b>START</b></p>
+				<p class="steps" id="step2"> <b>Step 1:</b> Accept Key Element. </p>
+				<p class="steps" id="step3"> <b>Step 2:</b> Compare Key Element to Element at Index 'i' </p>
+				<p class="steps" id="step4"> <b>Step 3:</b> If exactly matched: </p>
+				<p class="steps" id="step5">  &emsp; Print, Element Found.</p>
+				<p class="steps" id="step6"> <b>Step 4:</b> Else: </p>
+				<p class="steps" id="step7"> &emsp; Repeat Step 2 for n elements. </p>
+				<p class="steps" id="step8"> <b>Step 5:</b> If array index limit exceeded and element not found: </p>
+				<p class="steps" id="step9"> &emsp; Print, Element Not Found ! </p>
+				<p class="steps" id="step10"> <b>END</b> </p>
+			</div>
+		</div>
+		
+		<audio id="START">
+			<source src="Audio/START.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="step1_audio">
+			<source src="Audio/step1.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="step2_audio">
+			<source src="Audio/step2.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="step3_audio">
+			<source src="Audio/step3.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="step4_audio">
+			<source src="Audio/step4.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="step5_audio">
+			<source src="Audio/step5.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="ERROR">
+			<source src="Audio/ERROR.mp3" type="audio/mpeg">
+		</audio>
+
+		<script>
+		var input = document.getElementById("key");
+		input.addEventListener("keyup", function(event) {
+		  if (event.keyCode === 13) {
+		   event.preventDefault();
+		   document.getElementById("submit_button").click();
+		  }
+		});
+		
+		var input = document.getElementById("key");
+		input.addEventListener("keyup", function(event) {
+		  if (event.keyCode === 37) {
+		   event.preventDefault();
+		   document.getElementById("prev_button").click();
+		  }
+		});
+		
+		var input = document.getElementById("key");
+		input.addEventListener("keyup", function(event) {
+		  if (event.keyCode === 39) {
+		   event.preventDefault();
+		   document.getElementById("next_button").click();
+		  }
+		});
+		
+		var input = document.getElementById("element_input");
+		input.addEventListener("keyup", function(event) {
+		  if (event.keyCode === 13) {
+		   event.preventDefault();
+		   document.getElementById("sub_button").click();
+		  }
+		});
+		</script>
+
+	</body>
+</html>

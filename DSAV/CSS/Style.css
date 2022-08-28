@@ -1,0 +1,256 @@
+body
+{
+	font-family: 'Poppins', sans-serif;
+	background-color: LIGHTSKYBLUE;
+}
+
+#heading
+{
+	text-align: center;
+}
+
+#linear_serach_heading
+{
+	font-size: 4.5vw;
+	color: white;
+	background-color: BLACK;
+	border: 5px solid WHITE;
+	border-radius: 25px;
+	padding: 1%;
+	font-family: 'Montserrat', sans-serif;
+	margin: 1% 0% 1% 0%;
+}
+
+#ls_heading
+{
+	font-family: 'BioRhyme', serif;
+	font-size: 150%;
+	background-color: BLACK;
+	color: WHITE;
+	padding: 1.5%;
+}
+
+#info
+{
+	background-color: WHITE;
+	width: 100%;
+	margin: 1% 0% 1% 0%;
+	font-size: 125%;
+	line-height: 150%;
+	padding-bottom: 3%;
+	font-family: 'Poppins', sans-serif;
+}
+
+#def
+{
+	margin: 3%;
+	text-align: justify;
+}
+
+#specs
+{
+	list-style-type:disc;
+	margin: 3%;
+}
+#container
+{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#visualization_container
+{	
+	background-color: WHITE;
+	width: 64.2%;
+}
+
+#visualization_heading
+{
+	font-family: 'BioRhyme', serif;
+	color: WHITE;
+	background-color: BLACK;
+	margin: 0% 0% 0% 0%;
+	padding: 2%;
+	text-align: center;
+	margin: 0%;
+}
+
+#random_button
+{
+	font-size: 80%;
+	color: WHITE;
+	background-color: BLACK;
+	border: 2px solid black;
+	width: 25%;
+	padding: 1.5%;
+	margin: 3% 3% 3% 22%;
+	cursor: pointer;
+}
+
+#custom_button
+{
+	font-size: 80%;
+	color: WHITE;
+	background-color: BLACK;
+	border: 2px solid black;
+	width: 25%;
+	padding: 1.5%;
+	margin: 3% 3% 3% 0%;
+	cursor: pointer;
+}
+
+#current_index
+{
+	display: none;
+	margin-left: 3%;
+}
+
+#index
+{
+	font-size: 90%;
+	text-align: center;
+	border: 1px solid BLACK;
+	width: 5%;
+	display: none;
+}
+
+#result
+{
+	display: none;
+	margin-left: 3%;
+}
+
+.flex_container
+{
+	display: flex;
+}
+
+.indices
+{
+	color: rgba(255, 255, 255, 0);
+	font-size: 90%;
+	text-align: center;
+	width: 100%;
+	padding: 1.1%;
+}
+
+.elements
+{
+	color: rgba(255, 255, 255, 0);
+	font-size: 90%;
+	background-color: rgba(255, 255, 255, 0);
+	text-align: center;
+	border: 0px solid black;
+	width: 100%;
+	padding: 1%;
+}
+
+#key
+{
+	font-size: 90%;
+	text-align: center;
+	width: 7.5%;
+	padding: 1%;
+	position: relative;
+	border: 1px solid BLACK;
+	display: none;
+	margin-left: 3%;
+}
+
+#submit_button
+{
+	font-size: 90%;
+	color: WHITE;
+	background-color: BLACK;
+	border: 2px solid black;
+	width: 80px;
+	padding: 0.9% 0.5% 0.9% 0.5%;
+	cursor: pointer;
+	display: none;
+}
+
+#prev_button
+{
+	font-size: 90%;
+	color: white;
+	background-color: red;
+	border: 2px solid black;
+	width: 70px;
+	padding: 0.5%;
+	margin: 0% 3% 3% 0%;
+	cursor: pointer;
+	display: none;
+	margin-left: 3%;
+}
+
+#next_button
+{
+	font-size: 90%;
+	color: white;
+	background-color: red;
+	border: 2px solid black;
+	width: 70px;
+	padding: 0.5%;
+	cursor: pointer;
+	display: none;
+}
+
+#algorithm_container
+{
+	background-color: WHITE;
+	width: 35%;
+	margin-left: 0.8%;
+}
+
+#algorithm_heading
+{
+	font-family: 'BioRhyme', serif;
+	color: WHITE;
+	background-color: BLACK;
+	margin: 0% 0% 0% 0%;
+	padding: 3.6%;
+	text-align: center;
+}
+
+.steps
+{
+	font-size: 80%;
+	border: 1px solid LIGHTGRAY;
+	padding: 1% 2% 1% 2%;
+	margin: 0%;
+	font-family: 'Poppins', sans-serif;
+}
+
+#sub_button
+{
+	font-size: 90%;
+	color: WHITE;
+	background-color: BLACK;
+	border: 2px solid black;
+	width: 80px;
+	padding: 0.9% 0.5% 0.9% 0.5%;
+	cursor: pointer;
+	display: none;
+}
+
+#element_input
+{
+	font-size: 90%;
+	text-align: center;
+	width: 7.5%;
+	padding: 1%;
+	position: relative;
+	border: 1px solid BLACK;
+	display: none;
+	margin-left: 3%;
+}
+
+@keyframes animate{
+   from{
+     opacity: 0;
+   }
+   to{
+     opacity: 100;
+   }
+ }
